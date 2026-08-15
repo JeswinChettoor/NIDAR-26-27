@@ -33,6 +33,7 @@
                 </geometry>
             </visual>
 
+            <!-- ArduPilot EKF Sensors (Non-GPS) -->
             <sensor name="imu_sensor" type="imu">
                 <always_on>1</always_on>
                 <update_rate>400</update_rate>
@@ -54,6 +55,7 @@
                 <update_rate>50</update_rate>
             </sensor>
 
+            <!-- Payload Sensors -->
             <sensor name="lidar_2d" type="gpu_lidar">
                 <pose>0 0 0.08 0 0 0</pose>
                 <topic>/model/X3/lidar/scan</topic>
@@ -102,6 +104,8 @@
                 </camera>
             </sensor>
         </link>
+
+        <!-- Rotor 0 (Front Right - CCW) -->
         <link name="rotor_0">
             <pose>0.13 -0.22 0.023 0 0 0</pose>
             <inertial>
@@ -122,6 +126,7 @@
             <axis><xyz>0 0 1</xyz></axis>
         </joint>
 
+        <!-- Rotor 1 (Back Left - CCW) -->
         <link name="rotor_1">
             <pose>-0.13 0.2 0.023 0 0 0</pose>
             <inertial>
@@ -142,6 +147,7 @@
             <axis><xyz>0 0 1</xyz></axis>
         </joint>
 
+        <!-- Rotor 2 (Front Left - CW) -->
         <link name="rotor_2">
             <pose>0.13 0.22 0.023 0 0 0</pose>
             <inertial>
@@ -162,6 +168,7 @@
             <axis><xyz>0 0 1</xyz></axis>
         </joint>
 
+        <!-- Rotor 3 (Back Right - CW) -->
         <link name="rotor_3">
             <pose>-0.13 -0.2 0.023 0 0 0</pose>
             <inertial>
@@ -182,19 +189,21 @@
             <axis><xyz>0 0 1</xyz></axis>
         </joint>
 
+        <!-- Aerodynamic Thrust Simulation Plugins -->
         <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
             <jointName>rotor_0_joint</jointName>
             <linkName>rotor_0</linkName>
             <turningDirection>ccw</turningDirection>
             <timeConstantUp>0.0125</timeConstantUp>
             <timeConstantDown>0.025</timeConstantDown>
-            <maxRotVelocity>800</maxRotVelocity>
+            <maxRotVelocity>1000.0</maxRotVelocity>
             <motorConstant>8.54858e-06</motorConstant>
             <momentConstant>0.016</momentConstant>
-            <commandSubTopic>command/motor_speed</commandSubTopic>
-            <actuator_number>0</actuator_number>
+            <commandSubTopic>command/motor_speed/0</commandSubTopic>
             <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
             <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+            <motorNumber>0</motorNumber>
         </plugin>
 
         <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
@@ -203,13 +212,14 @@
             <turningDirection>ccw</turningDirection>
             <timeConstantUp>0.0125</timeConstantUp>
             <timeConstantDown>0.025</timeConstantDown>
-            <maxRotVelocity>800</maxRotVelocity>
+            <maxRotVelocity>1000.0</maxRotVelocity>
             <motorConstant>8.54858e-06</motorConstant>
             <momentConstant>0.016</momentConstant>
-            <commandSubTopic>command/motor_speed</commandSubTopic>
-            <actuator_number>1</actuator_number>
+            <commandSubTopic>command/motor_speed/1</commandSubTopic>
             <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
             <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+            <motorNumber>1</motorNumber>
         </plugin>
 
         <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
@@ -218,13 +228,14 @@
             <turningDirection>cw</turningDirection>
             <timeConstantUp>0.0125</timeConstantUp>
             <timeConstantDown>0.025</timeConstantDown>
-            <maxRotVelocity>800</maxRotVelocity>
+            <maxRotVelocity>1000.0</maxRotVelocity>
             <motorConstant>8.54858e-06</motorConstant>
             <momentConstant>0.016</momentConstant>
-            <commandSubTopic>command/motor_speed</commandSubTopic>
-            <actuator_number>2</actuator_number>
+            <commandSubTopic>command/motor_speed/2</commandSubTopic>
             <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
             <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+            <motorNumber>2</motorNumber>
         </plugin>
 
         <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
@@ -233,62 +244,65 @@
             <turningDirection>cw</turningDirection>
             <timeConstantUp>0.0125</timeConstantUp>
             <timeConstantDown>0.025</timeConstantDown>
-            <maxRotVelocity>800</maxRotVelocity>
+            <maxRotVelocity>1000.0</maxRotVelocity>
             <motorConstant>8.54858e-06</motorConstant>
             <momentConstant>0.016</momentConstant>
-            <commandSubTopic>command/motor_speed</commandSubTopic>
-            <actuator_number>3</actuator_number>
+            <commandSubTopic>command/motor_speed/3</commandSubTopic>
             <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
             <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+            <motorNumber>3</motorNumber>
         </plugin>
 
-        <plugin filename="ArduPilotPlugin" name="gz::sim::systems::ArduPilotPlugin">
+        <!-- ArduPilot Communication Bridge -->
+        <plugin filename="ArduPilotPlugin" name="ArduPilotPlugin">
             <fdm_addr>127.0.0.1</fdm_addr>
             <fdm_port_in>9002</fdm_port_in>
             <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
             <lock_step>1</lock_step>
             
+            <modelXYZToAirplaneXForwardZDown>0 0 0 3.14159 0 0</modelXYZToAirplaneXForwardZDown>
+            <gazeboXYZToNED>0 0 0 3.14159 0 0</gazeboXYZToNED>
+
             <have_imu>1</have_imu>
-            <have_mag>1</have_mag>
-            <have_pressure>1</have_pressure>
-            <have_gps>0</have_gps>
+            <imu_topic>imu</imu_topic>
 
             <controls>
                 <control channel="0">
                     <jointName>rotor_0_joint</jointName>
-                    <multiplier>800</multiplier>
-                    <offset>0</offset>
+                    <multiplier>1000</multiplier>
+                    <offset>-0.5</offset>
                     <servo_min>1000</servo_min>
                     <servo_max>2000</servo_max>
-                    <type>VELOCITY</type>
-                    <cmd_topic>/model/X3/command/motor_speed</cmd_topic>
+                    <type>COMMAND</type>
+                    <cmd_topic>/model/X3/command/motor_speed/0</cmd_topic>
                 </control>
                 <control channel="1">
                     <jointName>rotor_1_joint</jointName>
-                    <multiplier>800</multiplier>
-                    <offset>0</offset>
+                    <multiplier>1000</multiplier>
+                    <offset>-0.5</offset>
                     <servo_min>1000</servo_min>
                     <servo_max>2000</servo_max>
-                    <type>VELOCITY</type>
-                    <cmd_topic>/model/X3/command/motor_speed</cmd_topic>
+                    <type>COMMAND</type>
+                    <cmd_topic>/model/X3/command/motor_speed/1</cmd_topic>
                 </control>
                 <control channel="2">
                     <jointName>rotor_2_joint</jointName>
-                    <multiplier>800</multiplier>
-                    <offset>0</offset>
+                    <multiplier>1000</multiplier>
+                    <offset>-0.5</offset>
                     <servo_min>1000</servo_min>
                     <servo_max>2000</servo_max>
-                    <type>VELOCITY</type>
-                    <cmd_topic>/model/X3/command/motor_speed</cmd_topic>
+                    <type>COMMAND</type>
+                    <cmd_topic>/model/X3/command/motor_speed/2</cmd_topic>
                 </control>
                 <control channel="3">
                     <jointName>rotor_3_joint</jointName>
-                    <multiplier>800</multiplier>
-                    <offset>0</offset>
+                    <multiplier>1000</multiplier>
+                    <offset>-0.5</offset>
                     <servo_min>1000</servo_min>
                     <servo_max>2000</servo_max>
-                    <type>VELOCITY</type>
-                    <cmd_topic>/model/X3/command/motor_speed</cmd_topic>
+                    <type>COMMAND</type>
+                    <cmd_topic>/model/X3/command/motor_speed/3</cmd_topic>
                 </control>
             </controls>
         </plugin>

@@ -9,6 +9,7 @@ services:
         USER_GID: 1000
     image: nidar_airmouse:latest
     container_name: nidar_airmouse_dev
+    user: developer
     network_mode: host
     ipc: host
     environment:
@@ -18,7 +19,7 @@ services:
       - NVIDIA_DRIVER_CAPABILITIES=all
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
-      - ~/.Xauthority:/home/developer/.Xauthority:rw
+      - /dev/dri:/dev/dri
       - .:/workspace:rw
     deploy:
       resources:

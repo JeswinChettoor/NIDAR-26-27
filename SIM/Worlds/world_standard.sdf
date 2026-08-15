@@ -2669,6 +2669,12 @@
         <iterations>true</iterations>
       </plugin>
     </gui>
-
+    <include>
+      <uri>model://X3</uri>
+      <name>x3</name>
+      <pose>6.0 -6.5 0.05 0 0 -1.5708</pose>
+    </include>
+  </world>
+</sdf>
   </world>
 </sdf>

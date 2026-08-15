@@ -2,6 +2,7 @@
 <sdf version="1.9">
     <model name="X3">
         <pose>0 0 0.053302 0 0 0</pose>
+        
         <link name="base_link">
             <pose>0 0 0 0 0 0</pose>
             <inertial>
@@ -31,6 +32,7 @@
                     </mesh>
                 </geometry>
             </visual>
+
             <sensor name="imu_sensor" type="imu">
                 <always_on>1</always_on>
                 <update_rate>400</update_rate>
@@ -38,10 +40,20 @@
                     <enable_orientation>0</enable_orientation>
                 </imu>
             </sensor>
+
+            <sensor name="air_pressure" type="air_pressure">
+                <always_on>1</always_on>
+                <update_rate>50</update_rate>
+                <air_pressure>
+                    <reference_altitude>0</reference_altitude>
+                </air_pressure>
+            </sensor>
+
             <sensor name="magnetometer" type="magnetometer">
                 <always_on>1</always_on>
                 <update_rate>50</update_rate>
             </sensor>
+
             <sensor name="lidar_2d" type="gpu_lidar">
                 <pose>0 0 0.08 0 0 0</pose>
                 <topic>/model/X3/lidar/scan</topic>
@@ -71,8 +83,7 @@
             </sensor>
 
             <sensor name="camera_front_down" type="camera">
-                <!-- +0.785398 on Pitch axis = Look down 45 degrees -->
-                <pose>0.12 0 0 0 0.785398 0</pose>
+                <pose>-0.12 0 0 0 0.785398 3.14159</pose>
                 <topic>/model/X3/camera/image</topic>
                 <gz_frame_id>X3/base_link</gz_frame_id>
                 <always_on>1</always_on>
@@ -171,9 +182,6 @@
             <axis><xyz>0 0 1</xyz></axis>
         </joint>
 
-        <!-- ============================================== -->
-        <!-- MOTOR MODEL PLUGINS (Harmonic)                 -->
-        <!-- ============================================== -->
         <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
             <jointName>rotor_0_joint</jointName>
             <linkName>rotor_0</linkName>
@@ -183,7 +191,6 @@
             <maxRotVelocity>800</maxRotVelocity>
             <motorConstant>8.54858e-06</motorConstant>
             <momentConstant>0.016</momentConstant>
-            <!-- Routing to standard absolute topic to match ArduPilot -->
             <commandSubTopic>command/motor_speed</commandSubTopic>
             <actuator_number>0</actuator_number>
             <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
@@ -235,10 +242,6 @@
             <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
         </plugin>
 
-        <!-- ============================================== -->
-        <!-- ARDUPILOT PLUGIN                               -->
-        <!-- ============================================== -->
-        <!-- Uses explicit fully qualified namespace for Harmonic -->
         <plugin filename="ArduPilotPlugin" name="gz::sim::systems::ArduPilotPlugin">
             <fdm_addr>127.0.0.1</fdm_addr>
             <fdm_port_in>9002</fdm_port_in>
@@ -247,7 +250,7 @@
             
             <have_imu>1</have_imu>
             <have_mag>1</have_mag>
-            <have_pressure>0</have_pressure>
+            <have_pressure>1</have_pressure>
             <have_gps>0</have_gps>
 
             <controls>

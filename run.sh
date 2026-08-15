@@ -11,3 +11,4 @@ docker compose build --build-arg USER_UID=$(id -u) --build-arg USER_GID=$(id -g)
 
 # 4. Run interactive container explicitly named nidar_airmouse_dev
 docker compose run --rm --name nidar_airmouse_dev nidar_sim
+

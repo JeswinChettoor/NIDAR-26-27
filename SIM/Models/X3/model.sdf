@@ -264,8 +264,7 @@
             <modelXYZToAirplaneXForwardZDown>0 0 0 3.14159 0 0</modelXYZToAirplaneXForwardZDown>
             <gazeboXYZToNED>0 0 0 3.14159 0 0</gazeboXYZToNED>
 
-            <have_imu>1</have_imu>
-            <imu_topic>imu</imu_topic>
+            <imuName>imu_sensor</imuName>
 
             <controls>
                 <control channel="0">
@@ -305,6 +304,16 @@
                     <cmd_topic>/model/X3/command/motor_speed/3</cmd_topic>
                 </control>
             </controls>
+
+            <!-- Bridge the gpu_lidar sensor (defined on base_link above) into
+                 ArduPilot's rangefinder/proximity backend. Without this block
+                 the sensor still publishes fine in Gazebo, but SITL never
+                 receives any of its data. index=1 -> RNGFND1 / PRX1 slot. -->
+            <sensor>
+                <type>lidar</type>
+                <index>1</index>
+                <topic>/model/X3/lidar/scan</topic>
+            </sensor>
         </plugin>
     </model>
 </sdf>

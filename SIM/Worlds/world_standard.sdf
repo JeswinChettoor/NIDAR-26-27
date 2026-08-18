@@ -2669,6 +2669,7 @@
         <iterations>true</iterations>
       </plugin>
     </gui>
+
     <include>
       <uri>model://X3</uri>
       <name>X3</name>

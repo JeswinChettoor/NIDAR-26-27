@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generates a Gazebo Harmonic (gz sim 8.x / ROS 2 Jazzy) SDF 1.9 world file
+Generates a Gazebo Fortress (gz sim 6.x / ROS 2 Humble) SDF 1.9 world file
 from the arena_map grid below. Walls are merged into a minimal set of box
 primitives, and the scene includes realistic materials, lighting, physics,
 and GUI camera-control plugins. Run this script, then launch with:
@@ -161,7 +161,7 @@ arena_map = [
 ]
 
 # =============================================================================
-# Gazebo Harmonic (gz sim 8.x / ROS 2 Jazzy) world generator
+# Gazebo Fortress (gz sim 6.x / ROS 2 Humble) world generator
 # Converts the `arena_map` grid above into a realistic, procedurally built
 # SDF 1.9 world file.
 # =============================================================================

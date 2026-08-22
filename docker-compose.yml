@@ -20,6 +20,8 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - ~/.Xauthority:/home/developer/.Xauthority:rw
       - .:/workspace:rw
+    devices:
+      - /dev/dri:/dev/dri     # <--- ADD THIS LINE
     deploy:
       resources:
         reservations:

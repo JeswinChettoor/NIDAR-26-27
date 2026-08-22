@@ -2,7 +2,7 @@
 <sdf version="1.9">
     <model name="X3">
         <pose>0 0 0.053302 0 0 0</pose>
-        
+
         <link name="base_link">
             <pose>0 0 0 0 0 0</pose>
             <inertial>
@@ -20,7 +20,7 @@
             <collision name="base_link_inertia_collision">
                 <geometry>
                     <box>
-                        <size>0.47 0.47 0.11</size>
+                        <size>0.40 0.40 0.11</size>
                     </box>
                 </geometry>
             </collision>
@@ -32,14 +32,6 @@
                     </mesh>
                 </geometry>
             </visual>
-
-            <sensor name="imu_sensor" type="imu">
-                <always_on>1</always_on>
-                <update_rate>400</update_rate>
-                <imu>
-                    <enable_orientation>0</enable_orientation>
-                </imu>
-            </sensor>
 
             <sensor name="air_pressure" type="air_pressure">
                 <always_on>1</always_on>
@@ -55,11 +47,16 @@
             </sensor>
 
             <sensor name="lidar_2d" type="gpu_lidar">
-                <pose>0 0 0.08 0 0 0</pose>
+                <!-- Was 6.0 -6.5 0.8 (a copy of the drone's WORLD spawn pose).
+                     Sensor <pose> is relative to base_link, so that doubled
+                     the world offset and put the scan origin ~12,-13 —
+                     outside the arena. This is just "0.3m above the body,
+                     no lateral offset, facing forward". -->
+                <pose>0 0 0.3 0 0 0</pose>
                 <topic>/model/X3/lidar/scan</topic>
-                <gz_frame_id>X3/base_link</gz_frame_id>
                 <always_on>1</always_on>
                 <update_rate>13</update_rate>
+                <visualize>true</visualize>
                 <ray>
                     <scan>
                         <horizontal>
@@ -85,9 +82,9 @@
             <sensor name="camera_front_down" type="camera">
                 <pose>-0.12 0 0 0 0.785398 3.14159</pose>
                 <topic>/model/X3/camera/image</topic>
-                <gz_frame_id>X3/base_link</gz_frame_id>
                 <always_on>1</always_on>
                 <update_rate>30</update_rate>
+                <visualize>false</visualize>
                 <camera name="front_down_cam">
                     <horizontal_fov>1.39626</horizontal_fov>
                     <image>
@@ -102,6 +99,38 @@
                 </camera>
             </sensor>
         </link>
+
+        <link name="imu_link">
+            <pose>0 0 0 0 0 0</pose>
+            <inertial>
+                <mass>0.001</mass>
+                <inertia>
+                    <ixx>1e-6</ixx>
+                    <iyy>1e-6</iyy>
+                    <izz>1e-6</izz>
+                </inertia>
+            </inertial>
+            <sensor name="imu_sensor" type="imu">
+                <always_on>1</always_on>
+                <update_rate>400</update_rate>
+                <imu>
+                    <enable_orientation>0</enable_orientation>
+                </imu>
+            </sensor>
+        </link>
+
+        <joint name="imu_joint" type="revolute">
+            <parent>base_link</parent>
+            <child>imu_link</child>
+            <axis>
+                <xyz>0 0 1</xyz>
+                <limit>
+                    <lower>0</lower>
+                    <upper>0</upper>
+                </limit>
+            </axis>
+        </joint>
+
         <link name="rotor_0">
             <pose>0.13 -0.22 0.023 0 0 0</pose>
             <inertial>
@@ -247,7 +276,12 @@
             <fdm_port_in>9002</fdm_port_in>
             <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
             <lock_step>1</lock_step>
-            
+
+            <modelXYZToAirplaneXForwardZDown>0 0 0 3.141593 0 0</modelXYZToAirplaneXForwardZDown>
+            <gazeboXYZToNED>0 0 0 3.141593 0 0</gazeboXYZToNED>
+
+            <imuName>imu_sensor</imuName>
+
             <have_imu>1</have_imu>
             <have_mag>1</have_mag>
             <have_pressure>1</have_pressure>
@@ -256,39 +290,63 @@
             <controls>
                 <control channel="0">
                     <jointName>rotor_0_joint</jointName>
-                    <multiplier>800</multiplier>
+                    <multiplier>838</multiplier>
                     <offset>0</offset>
-                    <servo_min>1000</servo_min>
-                    <servo_max>2000</servo_max>
+                    <servo_min>1100</servo_min>
+                    <servo_max>1900</servo_max>
                     <type>VELOCITY</type>
-                    <cmd_topic>/model/X3/command/motor_speed</cmd_topic>
+                    <p_gain>0.20</p_gain>
+                    <i_gain>0</i_gain>
+                    <d_gain>0</d_gain>
+                    <i_max>0</i_max>
+                    <i_min>0</i_min>
+                    <cmd_max>2.5</cmd_max>
+                    <cmd_min>-2.5</cmd_min>
                 </control>
                 <control channel="1">
                     <jointName>rotor_1_joint</jointName>
-                    <multiplier>800</multiplier>
+                    <multiplier>838</multiplier>
                     <offset>0</offset>
-                    <servo_min>1000</servo_min>
-                    <servo_max>2000</servo_max>
+                    <servo_min>1100</servo_min>
+                    <servo_max>1900</servo_max>
                     <type>VELOCITY</type>
-                    <cmd_topic>/model/X3/command/motor_speed</cmd_topic>
+                    <p_gain>0.20</p_gain>
+                    <i_gain>0</i_gain>
+                    <d_gain>0</d_gain>
+                    <i_max>0</i_max>
+                    <i_min>0</i_min>
+                    <cmd_max>2.5</cmd_max>
+                    <cmd_min>-2.5</cmd_min>
                 </control>
                 <control channel="2">
                     <jointName>rotor_2_joint</jointName>
-                    <multiplier>800</multiplier>
+                    <multiplier>-838</multiplier>
                     <offset>0</offset>
-                    <servo_min>1000</servo_min>
-                    <servo_max>2000</servo_max>
+                    <servo_min>1100</servo_min>
+                    <servo_max>1900</servo_max>
                     <type>VELOCITY</type>
-                    <cmd_topic>/model/X3/command/motor_speed</cmd_topic>
+                    <p_gain>0.20</p_gain>
+                    <i_gain>0</i_gain>
+                    <d_gain>0</d_gain>
+                    <i_max>0</i_max>
+                    <i_min>0</i_min>
+                    <cmd_max>2.5</cmd_max>
+                    <cmd_min>-2.5</cmd_min>
                 </control>
                 <control channel="3">
                     <jointName>rotor_3_joint</jointName>
-                    <multiplier>800</multiplier>
+                    <multiplier>-838</multiplier>
                     <offset>0</offset>
-                    <servo_min>1000</servo_min>
-                    <servo_max>2000</servo_max>
+                    <servo_min>1100</servo_min>
+                    <servo_max>1900</servo_max>
                     <type>VELOCITY</type>
-                    <cmd_topic>/model/X3/command/motor_speed</cmd_topic>
+                    <p_gain>0.20</p_gain>
+                    <i_gain>0</i_gain>
+                    <d_gain>0</d_gain>
+                    <i_max>0</i_max>
+                    <i_min>0</i_min>
+                    <cmd_max>2.5</cmd_max>
+                    <cmd_min>-2.5</cmd_min>
                 </control>
             </controls>
         </plugin>

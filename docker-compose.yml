@@ -26,4 +26,4 @@ services:
     network_mode: host
     stdin_open: true
     tty: true
-    command: ["gz", "sim", "-v", "4", "/workspace/SIM/Worlds/combined_arena.sdf"]
+    #command: ["gz", "sim", "-v", "4", "/workspace/SIM/Worlds/combined_arena.sdf"]

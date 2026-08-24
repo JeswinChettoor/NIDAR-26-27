@@ -1,0 +1,3 @@
+[submodule "ardupilot_gazebo"]
+	path = ardupilot_gazebo
+	url = https://github.com/ArduPilot/ardupilot_gazebo.git

@@ -33,3 +33,43 @@ cd /workspace/ardupilot
 git submodule update --init --recursive
 ./waf configure --board sitl
 ./waf copter
+
+
+echo 'export PATH=$PATH:$HOME/.local/bin' >> ~/.bashrc
+source ~/.bashrc
+
+
+
+sudo apt update
+sudo apt install libgz-sim8-dev rapidjson-dev
+sudo apt install libopencv-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl
+
+
+sudo apt-get update
+sudo apt-get install -y --no-install-recommends software-properties-common
+sudo add-apt-repository -y universe
+sudo apt-get update
+sudo apt-get install -y --no-install-recommends python3-rosdep
+
+
+After logging in as root 
+```
+# Update and install system dependencies
+apt-get update && apt-get install -y curl gnupg2 lsb-release
+
+# Add the ROS key and repository list
+curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | apt-key add -
+echo "deb [arch=$(dpkg --print-architecture)] http://ros.org $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list
+
+# Install the rosdep binary
+apt-get update && apt-get install -y python3-rosdep
+
+# Initialize database (as root)
+rosdep init
+
+# Update database (as a normal user, or add --allow-root if you must stay root)
+rosdep update
+
+```
+
+

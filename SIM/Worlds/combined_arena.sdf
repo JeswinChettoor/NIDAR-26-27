@@ -2612,7 +2612,7 @@
         </gz-gui>
         <play_pause>true</play_pause>
         <step>true</step>
-        <start_paused>true</start_paused>
+        <start_paused>false</start_paused>
       </plugin>
       <plugin filename="WorldStats" name="World stats">
         <gz-gui>
@@ -2736,8 +2736,8 @@
       </plugin>
     </gui>
     <include>
-      <uri>model://X3</uri>
-      <name>X3</name>
+      <uri>model://iris_with_ardupilot</uri>
+      <name>iris</name>
       <pose>6.0 -6.5 0.5 0 0 -1.5708</pose>
     </include>
   </world>

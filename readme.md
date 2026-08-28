@@ -1,80 +1,44 @@
-# NIDAR Airmouse Simulation
+## 1. Clone the repo
 
-Indoor GPS-denied drone stack: **ROS 2 Humble + Gazebo Fortress + ArduPilot SITL**.
 
-## Quick start
 
-```bash
-# 1. Build and enter the dev container
-./run.sh
-
-# 2. In the container — one-time ArduPilot setup
-bash /workspace/scripts/setup_ardupilot.sh
-```
-
-Open extra terminals with `./enter.sh`.
-
-### Terminal 1 — Gazebo (empty world)
-
-```bash
-bash /workspace/scripts/run_gazebo.sh
-```
-
-### Terminal 2 — ArduPilot SITL (no GPS)
-
-```bash
-bash /workspace/scripts/run_sitl.sh
-```
-
-In the MAVProxy console:
+## 2.  Build docker
 
 ```
-STABILIZE> mode alt_hold
-ALT_HOLD> arm throttle
-ALT_HOLD> rc 3 1600
+xhost +local:root
+docker compose build
+docker compose up -d
 ```
 
-### Terminal 3 — ROS 2 sensor bridge
+## 3. Building ardupilot and ardupilot gazebo
+## 4. Installing Prerequisites
+```
+cd /workspace/ardupilot
+Tools/environment_install/install-prereqs-ubuntu.sh -y
+```
+#### 5. Set up
 
-```bash
-bash /workspace/scripts/run_ros_bridge.sh
+```
+export PATH=/workspace/ardupilot/Tools/autotest:$PATH
+export PATH=$HOME/.local/bin:$PATH
+echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
 ```
 
-Verify:
+#### 6. Launching a docker terminal
+```
+docker exec -it nidar-container bash
+```
+### 7. Launching the world 
 
-```bash
-ros2 topic list
-ros2 topic echo /model/X3/lidar/scan --once
+In a docker terminal
+```
+cd /workspace/SIM/Worlds && gz sim -v4 -r combined_arena.sdf
+
 ```
 
-### Arena maze world
-
-```bash
-bash /workspace/scripts/run_gazebo.sh /workspace/SIM/Worlds/world_standard.sdf
+### 8. Launching the drone 
+In another docker terminal
 ```
-
-## Stack
-
-| Layer | Choice |
-|---|---|
-| ROS 2 | Humble |
-| Simulator | Gazebo Fortress (via `ros-humble-ros-gz`) |
-| Flight controller | ArduPilot SITL |
-| Gazebo plugin | `ardupilot_gazebo` (fortress branch, baked in Docker) |
-| Drone model | `SIM/Models/X3/model.sdf` |
-| No-GPS params | `SIM/config/x3_no_gps.parm` |
-
-## No-GPS configuration
-
-GPS is disabled in two places:
-
-1. **Gazebo model** — `<have_gps>0</have_gps>` in `ArduPilotPlugin`
-2. **ArduPilot params** — `GPS_TYPE=0`, EKF3 sources without GPS in `x3_no_gps.parm`
-
-For autonomous GUIDED flight indoors, you will later feed SLAM/external nav into EKF3 (`EK3_SRC1_POSXY=6`).
-
-## Rebuild container after Dockerfile changes
-
-```bash
-./run.sh
+cd /workspace/ardupilot/ArduCopter
+sim_vehicle.py -v ArduCopter -f gazebo-iris --model JSON -w --add-param-file=/workspace/no_gps.parm --console
 ```

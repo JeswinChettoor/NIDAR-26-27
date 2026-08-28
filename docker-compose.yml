@@ -9,12 +9,16 @@ services:
       - XDG_RUNTIME_DIR=/tmp/runtime-developer
       - NVIDIA_VISIBLE_DEVICES=all
       - NVIDIA_DRIVER_CAPABILITIES=all
+      - OGRE_GL_DISABLE_EXT_DISCARD_FRAMEBUFFER=1
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - ~/.Xauthority:/home/developer/.Xauthority:rw
       - .:/workspace:rw
     devices:
       - /dev/dri:/dev/dri
+    group_add:
+      - video
+      - render
     deploy:
       resources:
         reservations:
@@ -26,4 +30,3 @@ services:
     network_mode: host
     stdin_open: true
     tty: true
-    #command: ["gz", "sim", "-v", "4", "/workspace/SIM/Worlds/combined_arena.sdf"]

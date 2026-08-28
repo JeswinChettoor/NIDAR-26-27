@@ -2633,23 +2633,19 @@
         <iterations>true</iterations>
       </plugin>
 
+      <!-- Camera Display Plugin (Keep this for the camera window) -->
       <plugin filename="ImageDisplay" name="Camera: front_down_cam">
         <gz-gui>
           <title>Camera Feed</title>
           <property type="string" key="state">docked</property>
           <property type="bool" key="showTitleBar">true</property>
         </gz-gui>
-        <topic>/model/X3/camera/image</topic>
+        <topic>/camera/image_raw</topic>
         <topic_picker>false</topic_picker>
       </plugin>
-      <plugin filename="VisualizeLidar" name="2D Lidar">
-        <gz-gui>
-          <title>2D Lidar</title>
-          <property type="string" key="state">docked</property>
-          <property type="bool" key="showTitleBar">true</property>
-        </gz-gui>
-        <topic>/model/X3/lidar/scan</topic>
-      </plugin>
+
+      <!-- VisualizeLidar removed so 3D Viewport native visualization can run without conflicts -->
+
       <plugin filename="EntityTree" name="Entity tree">
         <gz-gui>
           <title>Entity tree</title>
@@ -2738,7 +2734,7 @@
     <include>
       <uri>model://iris_with_ardupilot</uri>
       <name>iris</name>
-      <pose>6.0 -6.5 0.5 0 0 -1.5708</pose>
+      <pose>6.0 -6.5 0.5 0 0 1.5708</pose>
     </include>
   </world>
 </sdf>

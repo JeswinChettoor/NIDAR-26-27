@@ -11,7 +11,11 @@ docker compose up -d
 ```
 
 ## 3. Building ardupilot and ardupilot gazebo
-## 4. Installing Prerequisites
+
+## Installing ros2 humble + slam_toolbox 
+
+
+## 4. Installing Prerequisites for ardupilot 
 ```
 cd /workspace/ardupilot
 Tools/environment_install/install-prereqs-ubuntu.sh -y
@@ -42,3 +46,4 @@ In another docker terminal
 cd /workspace/ardupilot/ArduCopter
 sim_vehicle.py -v ArduCopter -f gazebo-iris --model JSON -w --add-param-file=/workspace/no_gps.parm --console
 ```
+

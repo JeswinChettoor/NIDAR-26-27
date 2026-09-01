@@ -8,91 +8,30 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5ec9a7d8df86bdb8",
+            "id": "e9571c8dd8fc44e7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Getting the drone model.md",
+                "file": "How to launch the world and drone.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Getting the drone model"
+              "title": "How to launch the world and drone"
             }
           },
           {
-            "id": "41cb8e96cb221edc",
+            "id": "ccbddde305ceeb5e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Procedure.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Procedure"
-            }
-          },
-          {
-            "id": "6d9720138ca8a7bb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Running commands.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Running commands"
-            }
-          },
-          {
-            "id": "c94f1a52c03fca1d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Random.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Random"
-            }
-          },
-          {
-            "id": "cde0bb396a95a858",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Localization + Maze Solving.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Localization + Maze Solving"
-            }
-          },
-          {
-            "id": "c8625e7c94ac5788",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Ardupilot Params.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Ardupilot Params"
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -259,15 +198,16 @@
       "bases:Create new base": false
     }
   },
-  "active": "c8625e7c94ac5788",
+  "active": "e9571c8dd8fc44e7",
   "lastOpenFiles": [
     "Localization + Maze Solving.md",
-    "Ardupilot Params.md",
-    "Random.md",
-    "Nectar SDK.md",
     "Getting the drone model.md",
+    "Ardupilot Params.md",
     "How to launch the world and drone.md",
     "Person Detection.md",
+    "Untitled.md",
+    "Random.md",
+    "Nectar SDK.md",
     "Running commands.md",
     "Install-prereqs output.md",
     "Gazebo Harmonic.md",

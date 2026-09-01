@@ -41,13 +41,13 @@
       <sensor name="lidar_2d" type="gpu_lidar">
         <pose>0 0 0 0 0 0</pose>
         <topic>/model/iris/lidar/scan</topic>
-        <update_rate>20</update_rate>
+        <update_rate>10</update_rate>
         <always_on>1</always_on>
         <visualize>true</visualize>
         <ray>
           <scan>
             <horizontal>
-              <samples>360</samples>
+              <samples>3000</samples>
               <resolution>1</resolution>
               <min_angle>-3.141592</min_angle>
               <max_angle>3.141592</max_angle>
@@ -76,6 +76,64 @@
     <joint name="lidar_joint" type="fixed">
       <parent>iris_with_standoffs::base_link</parent>
       <child>lidar_link</child>
+    </joint>
+    <link name="rangefinder_link">
+      <!-- Mounted under the frame pointing directly downward along -Z (Pitch = 90 deg / 1.5708 rad) -->
+      <pose relative_to="iris_with_standoffs::base_link">0 0 -0.05 0 1.5708 0</pose>
+      <inertial>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <iyy>1e-05</iyy>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+
+      <visual name="rangefinder_visual">
+        <geometry>
+          <box>
+            <size>0.02 0.02 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.1 0.1 0.1 1</ambient>
+          <diffuse>0.1 0.1 0.1 1</diffuse>
+        </material>
+      </visual>
+
+      <sensor name="rangefinder" type="gpu_lidar">
+        <pose>0 0 0 0 0 0</pose>
+        <topic>/model/iris/rangefinder</topic>
+        <update_rate>50</update_rate>
+        <always_on>1</always_on>
+        <visualize>false</visualize>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.05</min>
+            <max>25.0</max>
+            <resolution>0.01</resolution>
+          </range>
+        </ray>
+      </sensor>
+    </link>
+
+    <joint name="rangefinder_joint" type="fixed">
+      <parent>iris_with_standoffs::base_link</parent>
+      <child>rangefinder_link</child>
     </joint>
     <link name="front_camera_link">
       <!-- Mounted at bottom front: X = +0.12m (forward), Z = -0.05m (underneath frame) -->
@@ -919,7 +977,13 @@
 
       <!-- Sensors -->
       <imuName>iris_with_standoffs::imu_link::imu_sensor</imuName>
-
+      <imuName>iris_with_standoffs::imu_link::imu_sensor</imuName>
+      <have_imu>1</have_imu>
+      <have_mag>1</have_mag>
+      <have_pressure>1</have_pressure>
+      <have_gps>0</have_gps>
+      <have_rangefinder>1</have_rangefinder>
+      <rangefinderName>rangefinder_link::rangefinder</rangefinderName>
       <!--
           incoming control command [0, 1]
           so offset it by 0 to get [0, 1]

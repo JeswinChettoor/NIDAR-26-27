@@ -1,0 +1,340 @@
+[0.000000] (-) TimerEvent: {}
+[0.000172] (-) JobUnselected: {'identifier': 'ardupilot_dds_tests'}
+[0.000265] (-) JobUnselected: {'identifier': 'ardupilot_gazebo'}
+[0.000305] (-) JobUnselected: {'identifier': 'ardupilot_msgs'}
+[0.000319] (-) JobUnselected: {'identifier': 'ardupilot_sitl'}
+[0.000334] (rf2o_laser_odometry) JobQueued: {'identifier': 'rf2o_laser_odometry', 'dependencies': OrderedDict()}
+[0.000360] (rf2o_laser_odometry) JobStarted: {'identifier': 'rf2o_laser_odometry'}
+[0.011433] (rf2o_laser_odometry) JobProgress: {'identifier': 'rf2o_laser_odometry', 'progress': 'cmake'}
+[0.011878] (rf2o_laser_odometry) Command: {'cmd': ['/usr/bin/cmake', '/workspace/src/rf2o_laser_odometry', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/workspace/install/rf2o_laser_odometry'], 'cwd': '/workspace/build/rf2o_laser_odometry', 'env': OrderedDict([('GZ_SIM_SYSTEM_PLUGIN_PATH', '/workspace/ardupilot_gazebo/build:'), ('GZ_SIM_RESOURCE_PATH', '/workspace/SIM/Models:/workspace/SIM/Worlds:/workspace/ardupilot_gazebo/models:/workspace/ardupilot_gazebo/worlds:'), ('USER', 'developer'), ('HOSTNAME', 'jeswin-ASUS-TUF-F16'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/lib:'), ('HOME', '/home/developer'), ('COLCON_PREFIX_PATH', '/opt/ros/humble'), ('_', '/usr/bin/colcon'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('TERM', 'xterm'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/lib/ccache:/workspace/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:/home/developer/.local/bin:/home/developer/.local/bin:/home/developer/.local/bin:/workspace/ardupilot/Tools/autotest:/home/developer/.local/bin:/workspace/ardupilot/Tools/autotest:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('XDG_RUNTIME_DIR', '/tmp/runtime-developer'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('OGRE_GL_DISABLE_EXT_DISCARD_FRAMEBUFFER', '1'), ('GZ_VERSION', 'harmonic'), ('PWD', '/workspace/build/rf2o_laser_odometry'), ('LC_ALL', 'en_US.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.080444] (rf2o_laser_odometry) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.099177] (-) TimerEvent: {}
+[0.136847] (rf2o_laser_odometry) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.148266] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.199291] (-) TimerEvent: {}
+[0.226601] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.232111] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Check for working C compiler: /usr/lib/ccache/cc - skipped\n'}
+[0.233409] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.233844] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.237456] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.299431] (-) TimerEvent: {}
+[0.321826] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.327766] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/lib/ccache/c++ - skipped\n'}
+[0.328036] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.328186] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.332300] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.399554] (-) TimerEvent: {}
+[0.499845] (-) TimerEvent: {}
+[0.600153] (-) TimerEvent: {}
+[0.674426] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.700190] (-) TimerEvent: {}
+[0.739012] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.773257] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.800278] (-) TimerEvent: {}
+[0.827959] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.833613] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.844302] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.859843] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.878109] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.900434] (-) TimerEvent: {}
+[0.927014] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.3 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.930512] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.000562] (-) TimerEvent: {}
+[1.037057] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[1.067146] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[1.100671] (-) TimerEvent: {}
+[1.112474] (rf2o_laser_odometry) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.124964] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[1.200828] (-) TimerEvent: {}
+[1.204569] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[1.204963] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.292466] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.293756] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.300924] (-) TimerEvent: {}
+[1.350962] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found geometry_msgs: 4.9.2 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[1.365034] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.25.22 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)\n'}
+[1.382000] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[1.383582] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[1.383721] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[1.401032] (-) TimerEvent: {}
+[1.495832] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.2 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[1.501128] (-) TimerEvent: {}
+[1.513595] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found nav_msgs: 4.9.2 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[1.541132] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0")  \n'}
+[1.601235] (-) TimerEvent: {}
+[1.608642] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.621585] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Generating done\n'}
+[1.626596] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Build files have been written to: /workspace/build/rf2o_laser_odometry\n'}
+[1.637221] (rf2o_laser_odometry) CommandEnded: {'returncode': 0}
+[1.637684] (rf2o_laser_odometry) JobProgress: {'identifier': 'rf2o_laser_odometry', 'progress': 'build'}
+[1.638218] (rf2o_laser_odometry) Command: {'cmd': ['/usr/bin/cmake', '--build', '/workspace/build/rf2o_laser_odometry', '--', '-j16', '-l16'], 'cwd': '/workspace/build/rf2o_laser_odometry', 'env': OrderedDict([('GZ_SIM_SYSTEM_PLUGIN_PATH', '/workspace/ardupilot_gazebo/build:'), ('GZ_SIM_RESOURCE_PATH', '/workspace/SIM/Models:/workspace/SIM/Worlds:/workspace/ardupilot_gazebo/models:/workspace/ardupilot_gazebo/worlds:'), ('USER', 'developer'), ('HOSTNAME', 'jeswin-ASUS-TUF-F16'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/lib:'), ('HOME', '/home/developer'), ('COLCON_PREFIX_PATH', '/opt/ros/humble'), ('_', '/usr/bin/colcon'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('TERM', 'xterm'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/lib/ccache:/workspace/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:/home/developer/.local/bin:/home/developer/.local/bin:/home/developer/.local/bin:/workspace/ardupilot/Tools/autotest:/home/developer/.local/bin:/workspace/ardupilot/Tools/autotest:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('XDG_RUNTIME_DIR', '/tmp/runtime-developer'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('OGRE_GL_DISABLE_EXT_DISCARD_FRAMEBUFFER', '1'), ('GZ_VERSION', 'harmonic'), ('PWD', '/workspace/build/rf2o_laser_odometry'), ('LC_ALL', 'en_US.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[1.683738] (rf2o_laser_odometry) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/rf2o_laser_odometry_node.dir/src/CLaserOdometry2D.cpp.o\x1b[0m\n'}
+[1.685294] (rf2o_laser_odometry) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/rf2o_laser_odometry_node.dir/src/CLaserOdometry2DNode.cpp.o\x1b[0m\n'}
+[1.685418] (rf2o_laser_odometry) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/rf2o_laser_odometry.dir/src/CLaserOdometry2D.cpp.o\x1b[0m\n'}
+[1.701332] (-) TimerEvent: {}
+[1.801657] (-) TimerEvent: {}
+[1.901984] (-) TimerEvent: {}
+[2.002319] (-) TimerEvent: {}
+[2.102851] (-) TimerEvent: {}
+[2.203384] (-) TimerEvent: {}
+[2.303818] (-) TimerEvent: {}
+[2.404217] (-) TimerEvent: {}
+[2.504681] (-) TimerEvent: {}
+[2.605023] (-) TimerEvent: {}
+[2.705441] (-) TimerEvent: {}
+[2.805926] (-) TimerEvent: {}
+[2.906223] (-) TimerEvent: {}
+[3.006563] (-) TimerEvent: {}
+[3.106900] (-) TimerEvent: {}
+[3.207872] (-) TimerEvent: {}
+[3.308340] (-) TimerEvent: {}
+[3.408854] (-) TimerEvent: {}
+[3.509317] (-) TimerEvent: {}
+[3.609631] (-) TimerEvent: {}
+[3.709929] (-) TimerEvent: {}
+[3.810212] (-) TimerEvent: {}
+[3.910532] (-) TimerEvent: {}
+[4.010841] (-) TimerEvent: {}
+[4.111200] (-) TimerEvent: {}
+[4.211654] (-) TimerEvent: {}
+[4.312073] (-) TimerEvent: {}
+[4.412482] (-) TimerEvent: {}
+[4.512892] (-) TimerEvent: {}
+[4.613315] (-) TimerEvent: {}
+[4.713723] (-) TimerEvent: {}
+[4.814056] (-) TimerEvent: {}
+[4.914691] (-) TimerEvent: {}
+[5.015064] (-) TimerEvent: {}
+[5.115400] (-) TimerEvent: {}
+[5.215771] (-) TimerEvent: {}
+[5.316218] (-) TimerEvent: {}
+[5.416509] (-) TimerEvent: {}
+[5.516874] (-) TimerEvent: {}
+[5.617149] (-) TimerEvent: {}
+[5.717454] (-) TimerEvent: {}
+[5.817775] (-) TimerEvent: {}
+[5.918057] (-) TimerEvent: {}
+[6.018367] (-) TimerEvent: {}
+[6.118733] (-) TimerEvent: {}
+[6.219040] (-) TimerEvent: {}
+[6.319438] (-) TimerEvent: {}
+[6.419928] (-) TimerEvent: {}
+[6.520242] (-) TimerEvent: {}
+[6.620593] (-) TimerEvent: {}
+[6.720973] (-) TimerEvent: {}
+[6.821382] (-) TimerEvent: {}
+[6.921633] (-) TimerEvent: {}
+[7.021952] (-) TimerEvent: {}
+[7.122393] (-) TimerEvent: {}
+[7.222749] (-) TimerEvent: {}
+[7.323033] (-) TimerEvent: {}
+[7.423311] (-) TimerEvent: {}
+[7.523607] (-) TimerEvent: {}
+[7.624186] (-) TimerEvent: {}
+[7.724665] (-) TimerEvent: {}
+[7.825121] (-) TimerEvent: {}
+[7.925619] (-) TimerEvent: {}
+[8.026056] (-) TimerEvent: {}
+[8.126495] (-) TimerEvent: {}
+[8.227873] (-) TimerEvent: {}
+[8.328252] (-) TimerEvent: {}
+[8.428501] (-) TimerEvent: {}
+[8.528749] (-) TimerEvent: {}
+[8.629126] (-) TimerEvent: {}
+[8.729877] (-) TimerEvent: {}
+[8.830198] (-) TimerEvent: {}
+[8.930467] (-) TimerEvent: {}
+[9.030860] (-) TimerEvent: {}
+[9.131274] (-) TimerEvent: {}
+[9.231591] (-) TimerEvent: {}
+[9.331939] (-) TimerEvent: {}
+[9.432435] (-) TimerEvent: {}
+[9.532879] (-) TimerEvent: {}
+[9.633233] (-) TimerEvent: {}
+[9.733776] (-) TimerEvent: {}
+[9.834165] (-) TimerEvent: {}
+[9.934446] (-) TimerEvent: {}
+[10.034791] (-) TimerEvent: {}
+[10.135152] (-) TimerEvent: {}
+[10.235512] (-) TimerEvent: {}
+[10.335827] (-) TimerEvent: {}
+[10.436203] (-) TimerEvent: {}
+[10.536887] (-) TimerEvent: {}
+[10.637354] (-) TimerEvent: {}
+[10.737728] (-) TimerEvent: {}
+[10.838163] (-) TimerEvent: {}
+[10.938593] (-) TimerEvent: {}
+[11.038968] (-) TimerEvent: {}
+[11.139274] (-) TimerEvent: {}
+[11.239601] (-) TimerEvent: {}
+[11.339957] (-) TimerEvent: {}
+[11.440280] (-) TimerEvent: {}
+[11.540674] (-) TimerEvent: {}
+[11.641015] (-) TimerEvent: {}
+[11.741367] (-) TimerEvent: {}
+[11.841654] (-) TimerEvent: {}
+[11.942137] (-) TimerEvent: {}
+[12.042519] (-) TimerEvent: {}
+[12.142831] (-) TimerEvent: {}
+[12.243184] (-) TimerEvent: {}
+[12.343554] (-) TimerEvent: {}
+[12.443853] (-) TimerEvent: {}
+[12.544226] (-) TimerEvent: {}
+[12.644572] (-) TimerEvent: {}
+[12.745028] (-) TimerEvent: {}
+[12.845415] (-) TimerEvent: {}
+[12.945852] (-) TimerEvent: {}
+[13.046076] (-) TimerEvent: {}
+[13.146506] (-) TimerEvent: {}
+[13.247047] (-) TimerEvent: {}
+[13.347333] (-) TimerEvent: {}
+[13.447657] (-) TimerEvent: {}
+[13.547973] (-) TimerEvent: {}
+[13.648324] (-) TimerEvent: {}
+[13.748764] (-) TimerEvent: {}
+[13.849070] (-) TimerEvent: {}
+[13.949410] (-) TimerEvent: {}
+[14.049721] (-) TimerEvent: {}
+[14.150121] (-) TimerEvent: {}
+[14.250565] (-) TimerEvent: {}
+[14.350868] (-) TimerEvent: {}
+[14.451294] (-) TimerEvent: {}
+[14.551654] (-) TimerEvent: {}
+[14.651982] (-) TimerEvent: {}
+[14.752251] (-) TimerEvent: {}
+[14.852556] (-) TimerEvent: {}
+[14.952875] (-) TimerEvent: {}
+[15.053195] (-) TimerEvent: {}
+[15.153510] (-) TimerEvent: {}
+[15.253869] (-) TimerEvent: {}
+[15.354173] (-) TimerEvent: {}
+[15.454544] (-) TimerEvent: {}
+[15.554918] (-) TimerEvent: {}
+[15.655225] (-) TimerEvent: {}
+[15.755541] (-) TimerEvent: {}
+[15.855873] (-) TimerEvent: {}
+[15.956218] (-) TimerEvent: {}
+[16.056469] (-) TimerEvent: {}
+[16.156849] (-) TimerEvent: {}
+[16.257152] (-) TimerEvent: {}
+[16.357475] (-) TimerEvent: {}
+[16.457785] (-) TimerEvent: {}
+[16.558055] (-) TimerEvent: {}
+[16.658350] (-) TimerEvent: {}
+[16.758594] (-) TimerEvent: {}
+[16.858865] (-) TimerEvent: {}
+[16.959255] (-) TimerEvent: {}
+[17.059536] (-) TimerEvent: {}
+[17.159838] (-) TimerEvent: {}
+[17.260305] (-) TimerEvent: {}
+[17.360573] (-) TimerEvent: {}
+[17.460872] (-) TimerEvent: {}
+[17.561181] (-) TimerEvent: {}
+[17.661466] (-) TimerEvent: {}
+[17.761797] (-) TimerEvent: {}
+[17.862084] (-) TimerEvent: {}
+[17.962400] (-) TimerEvent: {}
+[18.062701] (-) TimerEvent: {}
+[18.162970] (-) TimerEvent: {}
+[18.263240] (-) TimerEvent: {}
+[18.363530] (-) TimerEvent: {}
+[18.463812] (-) TimerEvent: {}
+[18.564117] (-) TimerEvent: {}
+[18.664654] (-) TimerEvent: {}
+[18.765044] (-) TimerEvent: {}
+[18.865367] (-) TimerEvent: {}
+[18.965657] (-) TimerEvent: {}
+[19.065917] (-) TimerEvent: {}
+[19.166190] (-) TimerEvent: {}
+[19.266508] (-) TimerEvent: {}
+[19.366786] (-) TimerEvent: {}
+[19.467139] (-) TimerEvent: {}
+[19.567510] (-) TimerEvent: {}
+[19.667822] (-) TimerEvent: {}
+[19.768118] (-) TimerEvent: {}
+[19.868339] (-) TimerEvent: {}
+[19.968581] (-) TimerEvent: {}
+[20.068781] (-) TimerEvent: {}
+[20.169018] (-) TimerEvent: {}
+[20.269275] (-) TimerEvent: {}
+[20.369603] (-) TimerEvent: {}
+[20.469939] (-) TimerEvent: {}
+[20.570301] (-) TimerEvent: {}
+[20.670636] (-) TimerEvent: {}
+[20.771016] (-) TimerEvent: {}
+[20.871328] (-) TimerEvent: {}
+[20.971590] (-) TimerEvent: {}
+[21.071868] (-) TimerEvent: {}
+[21.172187] (-) TimerEvent: {}
+[21.272427] (-) TimerEvent: {}
+[21.372698] (-) TimerEvent: {}
+[21.473095] (-) TimerEvent: {}
+[21.573405] (-) TimerEvent: {}
+[21.673753] (-) TimerEvent: {}
+[21.774167] (-) TimerEvent: {}
+[21.874518] (-) TimerEvent: {}
+[21.974878] (-) TimerEvent: {}
+[22.075150] (-) TimerEvent: {}
+[22.175423] (-) TimerEvent: {}
+[22.275693] (-) TimerEvent: {}
+[22.375953] (-) TimerEvent: {}
+[22.476235] (-) TimerEvent: {}
+[22.576609] (-) TimerEvent: {}
+[22.677087] (-) TimerEvent: {}
+[22.777467] (-) TimerEvent: {}
+[22.877808] (-) TimerEvent: {}
+[22.978148] (-) TimerEvent: {}
+[23.078489] (-) TimerEvent: {}
+[23.178792] (-) TimerEvent: {}
+[23.279126] (-) TimerEvent: {}
+[23.379404] (-) TimerEvent: {}
+[23.479650] (-) TimerEvent: {}
+[23.579977] (-) TimerEvent: {}
+[23.680248] (-) TimerEvent: {}
+[23.780609] (-) TimerEvent: {}
+[23.881059] (-) TimerEvent: {}
+[23.981340] (-) TimerEvent: {}
+[24.081693] (-) TimerEvent: {}
+[24.141268] (rf2o_laser_odometry) StdoutLine: {'line': b'[ 80%] \x1b[32m\x1b[1mLinking CXX executable rf2o_laser_odometry_node\x1b[0m\n'}
+[24.181798] (-) TimerEvent: {}
+[24.282121] (-) TimerEvent: {}
+[24.305905] (rf2o_laser_odometry) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX static library librf2o_laser_odometry.a\x1b[0m\n'}
+[24.382287] (-) TimerEvent: {}
+[24.482787] (-) TimerEvent: {}
+[24.527526] (rf2o_laser_odometry) StdoutLine: {'line': b'[100%] Built target rf2o_laser_odometry\n'}
+[24.582887] (-) TimerEvent: {}
+[24.683160] (-) TimerEvent: {}
+[24.783545] (-) TimerEvent: {}
+[24.884073] (-) TimerEvent: {}
+[24.984396] (-) TimerEvent: {}
+[25.084734] (-) TimerEvent: {}
+[25.185045] (-) TimerEvent: {}
+[25.285362] (-) TimerEvent: {}
+[25.383338] (rf2o_laser_odometry) StdoutLine: {'line': b'[100%] Built target rf2o_laser_odometry_node\n'}
+[25.385455] (-) TimerEvent: {}
+[25.392188] (rf2o_laser_odometry) CommandEnded: {'returncode': 0}
+[25.392724] (rf2o_laser_odometry) JobProgress: {'identifier': 'rf2o_laser_odometry', 'progress': 'install'}
+[25.400558] (rf2o_laser_odometry) Command: {'cmd': ['/usr/bin/cmake', '--install', '/workspace/build/rf2o_laser_odometry'], 'cwd': '/workspace/build/rf2o_laser_odometry', 'env': OrderedDict([('GZ_SIM_SYSTEM_PLUGIN_PATH', '/workspace/ardupilot_gazebo/build:'), ('GZ_SIM_RESOURCE_PATH', '/workspace/SIM/Models:/workspace/SIM/Worlds:/workspace/ardupilot_gazebo/models:/workspace/ardupilot_gazebo/worlds:'), ('USER', 'developer'), ('HOSTNAME', 'jeswin-ASUS-TUF-F16'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/lib:'), ('HOME', '/home/developer'), ('COLCON_PREFIX_PATH', '/opt/ros/humble'), ('_', '/usr/bin/colcon'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('TERM', 'xterm'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/lib/ccache:/workspace/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:/home/developer/.local/bin:/home/developer/.local/bin:/home/developer/.local/bin:/workspace/ardupilot/Tools/autotest:/home/developer/.local/bin:/workspace/ardupilot/Tools/autotest:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('XDG_RUNTIME_DIR', '/tmp/runtime-developer'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('OGRE_GL_DISABLE_EXT_DISCARD_FRAMEBUFFER', '1'), ('GZ_VERSION', 'harmonic'), ('PWD', '/workspace/build/rf2o_laser_odometry'), ('LC_ALL', 'en_US.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[25.407173] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[25.407405] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[25.407673] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Symlinking: /workspace/install/rf2o_laser_odometry/lib/rf2o_laser_odometry/rf2o_laser_odometry_node\n'}
+[25.414521] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/launch/rf2o_laser_odometry.launch.py\n'}
+[25.423038] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Symlinking: /workspace/install/rf2o_laser_odometry/share/ament_index/resource_index/package_run_dependencies/rf2o_laser_odometry\n'}
+[25.429774] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Symlinking: /workspace/install/rf2o_laser_odometry/share/ament_index/resource_index/parent_prefix_path/rf2o_laser_odometry\n'}
+[25.438280] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/ament_prefix_path.sh\n'}
+[25.446227] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/ament_prefix_path.dsv\n'}
+[25.454483] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/path.sh\n'}
+[25.461845] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/path.dsv\n'}
+[25.468690] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.bash\n'}
+[25.474592] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.sh\n'}
+[25.481830] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.zsh\n'}
+[25.485538] (-) TimerEvent: {}
+[25.488557] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.dsv\n'}
+[25.497138] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/package.dsv\n'}
+[25.504527] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Symlinking: /workspace/install/rf2o_laser_odometry/share/ament_index/resource_index/packages/rf2o_laser_odometry\n'}
+[25.514332] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/cmake/rf2o_laser_odometryConfig.cmake\n'}
+[25.521556] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/cmake/rf2o_laser_odometryConfig-version.cmake\n'}
+[25.529250] (rf2o_laser_odometry) StdoutLine: {'line': b'-- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/package.xml\n'}
+[25.537784] (rf2o_laser_odometry) CommandEnded: {'returncode': 0}
+[25.554878] (rf2o_laser_odometry) JobEnded: {'identifier': 'rf2o_laser_odometry', 'rc': 0}
+[25.555341] (-) EventReactorShutdown: {}

@@ -99,13 +99,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         ros-humble-tf2-ros \
     && rm -rf /var/lib/apt/lists/*
     
-RUN mkdir -p /tmp/rf2o_ws/src && \
-    cd /tmp/rf2o_ws/src && \
-    git clone https://github.com/MAPIRlab/rf2o_laser_odometry.git -b ros2 && \
-    cd /tmp/rf2o_ws && \
-    . /opt/ros/humble/setup.sh && \
-    colcon build --symlink-install --install-base /opt/ros/humble --merge-install && \
-    rm -rf /tmp/rf2o_ws
 # ==============================================================================
 # 8. User Creation & Sudo Permissions
 # ==============================================================================

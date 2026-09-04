@@ -1,0 +1,43 @@
+[0.010s] Invoking command in '/workspace/build/rf2o_laser_odometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspace/build/rf2o_laser_odometry -- -j16 -l16
+[0.067s] [ 40%] Built target rf2o_laser_odometry
+[0.068s] [100%] Built target rf2o_laser_odometry_node
+[0.079s] Invoked command in '/workspace/build/rf2o_laser_odometry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspace/build/rf2o_laser_odometry -- -j16 -l16
+[0.088s] Invoking command in '/workspace/build/rf2o_laser_odometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspace/build/rf2o_laser_odometry
+[0.095s] -- Install configuration: ""
+[0.096s] -- Execute custom install script
+[0.096s] -- Up-to-date symlink: /workspace/install/rf2o_laser_odometry/lib/rf2o_laser_odometry/rf2o_laser_odometry_node
+[0.096s] [33mCMake Warning (dev) at ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:67 (file):
+[0.096s]   Policy CMP0009 is not set: FILE GLOB_RECURSE calls should not follow
+[0.096s]   symlinks by default.  Run "cmake --help-policy CMP0009" for policy details.
+[0.096s]   Use the cmake_policy command to set the policy and suppress this warning.
+[0.096s] Call Stack (most recent call first):
+[0.096s]   ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:322 (ament_cmake_symlink_install_directory)
+[0.096s]   cmake_install.cmake:46 (include)
+[0.096s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[0.096s] [0m
+[0.096s] -- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/launch/build/.built_by
+[0.106s] -- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/launch/build/COLCON_IGNORE
+[0.115s] -- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/launch/log/COLCON_IGNORE
+[0.122s] -- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/launch/log/build_2026-09-04_12-13-24/events.log
+[0.131s] -- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/launch/log/build_2026-09-04_12-13-24/logger_all.log
+[0.139s] -- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/launch/log/latest/events.log
+[0.149s] -- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/launch/log/latest/logger_all.log
+[0.158s] -- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/launch/log/latest_build/events.log
+[0.167s] -- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/launch/log/latest_build/logger_all.log
+[0.173s] -- Up-to-date symlink: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/launch/rf2o_laser_odometry.launch.py
+[0.173s] -- Up-to-date symlink: /workspace/install/rf2o_laser_odometry/share/ament_index/resource_index/package_run_dependencies/rf2o_laser_odometry
+[0.174s] -- Up-to-date symlink: /workspace/install/rf2o_laser_odometry/share/ament_index/resource_index/parent_prefix_path/rf2o_laser_odometry
+[0.174s] -- Up-to-date symlink: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/ament_prefix_path.sh
+[0.174s] -- Up-to-date symlink: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/ament_prefix_path.dsv
+[0.174s] -- Up-to-date symlink: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/path.sh
+[0.174s] -- Up-to-date symlink: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/path.dsv
+[0.174s] -- Up-to-date symlink: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.bash
+[0.174s] -- Up-to-date symlink: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.sh
+[0.174s] -- Up-to-date symlink: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.zsh
+[0.174s] -- Up-to-date symlink: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.dsv
+[0.174s] -- Symlinking: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/package.dsv
+[0.183s] -- Up-to-date symlink: /workspace/install/rf2o_laser_odometry/share/ament_index/resource_index/packages/rf2o_laser_odometry
+[0.183s] -- Up-to-date symlink: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/cmake/rf2o_laser_odometryConfig.cmake
+[0.183s] -- Up-to-date symlink: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/cmake/rf2o_laser_odometryConfig-version.cmake
+[0.183s] -- Up-to-date symlink: /workspace/install/rf2o_laser_odometry/share/rf2o_laser_odometry/package.xml
+[0.185s] Invoked command in '/workspace/build/rf2o_laser_odometry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspace/build/rf2o_laser_odometry

@@ -123,8 +123,8 @@ ENV GZ_VERSION=harmonic
 ENV XDG_RUNTIME_DIR=/tmp/runtime-$USERNAME
 
 # Preset Gazebo search paths for models, worlds, and plugins
-ENV GZ_SIM_SYSTEM_PLUGIN_PATH=/workspace/ardupilot_gazebo/build:$GZ_SIM_SYSTEM_PLUGIN_PATH
-ENV GZ_SIM_RESOURCE_PATH=/workspace/SIM/Models:/workspace/SIM/Worlds:/workspace/ardupilot_gazebo/models:/workspace/ardupilot_gazebo/worlds:$GZ_SIM_RESOURCE_PATH
+ENV GZ_SIM_SYSTEM_PLUGIN_PATH=/workspace/ardupilot_gazebo/build
+ENV GZ_SIM_RESOURCE_PATH=/workspace/SIM/Models:/workspace/SIM/Worlds:/workspace/ardupilot_gazebo/models:/workspace/ardupilot_gazebo/worlds
 
 # ArduPilot autotest and local binary paths
 ENV PATH=/home/$USERNAME/.local/bin:/workspace/ardupilot/Tools/autotest:$PATH
@@ -139,9 +139,13 @@ USER $USERNAME
 # ==============================================================================
 # 10. Persistent Shell Sourcing (.bashrc)
 # ==============================================================================
+# ==============================================================================
+# 10. Persistent Shell Sourcing (.bashrc)
+# ==============================================================================
 RUN echo "source /opt/ros/humble/setup.bash" >> /home/$USERNAME/.bashrc && \
-    echo "if [ -f /home/$USERNAME/drone_ws/install/setup.bash ]; then source /home/$USERNAME/drone_ws/install/setup.bash; fi" >> /home/$USERNAME/.bashrc && \
-    echo "export PATH=/home/$USERNAME/.local/bin:/workspace/ardupilot/Tools/autotest:\$PATH" >> /home/$USERNAME/.bashrc
-
+    echo "if [ -f /workspace/install/setup.bash ]; then source /workspace/install/setup.bash; fi" >> /home/$USERNAME/.bashrc && \
+    echo "export PATH=/home/$USERNAME/.local/bin:/workspace/ardupilot/Tools/autotest:\$PATH" >> /home/$USERNAME/.bashrc && \
+    echo "if [ -f /workspace/ardupilot/Tools/completion/completion.bash ]; then source /workspace/ardupilot/Tools/completion/completion.bash; fi" >> /home/$USERNAME/.bashrc && \
+    echo "if [ -f /home/$USERNAME/.ardupilot_env ]; then source /home/$USERNAME/.ardupilot_env; fi" >> /home/$USERNAME/.bashrc
 WORKDIR /workspace
 CMD ["/bin/bash"]

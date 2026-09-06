@@ -1,75 +1,54 @@
-cmake_minimum_required(VERSION 3.5)
-project(rf2o_laser_odometry)
-
-
-if(NOT CMAKE_CXX_STANDARD)
-  set(CMAKE_CXX_STANDARD 14)
-endif()
+cmake_minimum_required(VERSION 3.8)
+project(lidar_preprocessing)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+# Enforce C++17
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 17)
+endif()
+
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(std_msgs REQUIRED)
-find_package(geometry_msgs REQUIRED)
-find_package(tf2_geometry_msgs REQUIRED)
-find_package(tf2  REQUIRED)
-find_package(tf2_ros REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 
-## System dependencies are found with CMake's conventions
-find_package(Boost REQUIRED)
-find_package(eigen3_cmake_module REQUIRED)
-find_package(Eigen3 REQUIRED)
-
-
-set(EXECUTABLE_NAME "rf2o_laser_odometry_node")
-
-## Specify additional locations of header files
-## Your package locations should be listed before other locations
-add_executable(${EXECUTABLE_NAME} 
-    src/CLaserOdometry2DNode.cpp
-    src/CLaserOdometry2D.cpp)
-
-include_directories(
-  include include/
+# scan_preprocessor
+add_executable(scan_preprocessor src/scan_preprocessor.cpp)
+ament_target_dependencies(scan_preprocessor
+  rclcpp 
+  sensor_msgs 
+  geometry_msgs 
+  tf2 
+  tf2_geometry_msgs
 )
 
-include_directories(  
-  ${Boost_INCLUDE_DIRS}
-  ##${EIGEN3_INCLUDE_DIRS}
+# odom_bridge
+add_executable(odom_bridge src/odom_bridge.cpp)
+ament_target_dependencies(odom_bridge 
+  rclcpp 
+  nav_msgs 
+  geometry_msgs
 )
 
-set(DEPENDENCIES
-  "rclcpp"           
-  "std_msgs"         
-  "geometry_msgs" 
-  "tf2_geometry_msgs"
-  "tf2"
-  "tf2_ros"
-  "sensor_msgs"
-  "nav_msgs"
-  "eigen3_cmake_module"
+# Install binaries
+install(TARGETS 
+  scan_preprocessor 
+  odom_bridge 
+  DESTINATION lib/${PROJECT_NAME}
 )
 
-##target_include_directories(${PROJECT_NAME} PUBLIC ${Eigen3_INCLUDE_DIRS})
-ament_target_dependencies(${EXECUTABLE_NAME} ${DEPENDENCIES})
-
-## Declare a cpp library
-add_library(${PROJECT_NAME} src/CLaserOdometry2D.cpp)
-
-## Declare a cpp executable
-ament_target_dependencies(${PROJECT_NAME} ${DEPENDENCIES})
-
-install(TARGETS ${EXECUTABLE_NAME}
-  DESTINATION lib/${PROJECT_NAME})
-
-install(
-  DIRECTORY launch  
-  DESTINATION share/${PROJECT_NAME})
+# Install launch files (ensure a 'launch' directory exists)
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/launch")
+  install(DIRECTORY
+    launch
+    DESTINATION share/${PROJECT_NAME}/
+  )
+endif()
 
 ament_package()
-

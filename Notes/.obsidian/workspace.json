@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Setting up  localization.md",
+                "file": "Getting stuff to work.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Setting up  localization"
+              "title": "Getting stuff to work"
             }
           }
         ],
@@ -205,15 +205,15 @@
   },
   "active": "75c904e9a9e457a3",
   "lastOpenFiles": [
-    "Getting stuff to work.md",
-    "Setting up  localization.md",
-    "Ardupilot Params.md",
-    "Localization + Maze Solving.md",
-    "Nectar SDK.md",
-    "Random.md",
-    "Person Detection.md",
-    "How to launch the world and drone.md",
     "Getting the drone model.md",
+    "How to launch the world and drone.md",
+    "Localization + Maze Solving.md",
+    "Person Detection.md",
+    "Random.md",
+    "Setting up  localization.md",
+    "Getting stuff to work.md",
+    "Ardupilot Params.md",
+    "Nectar SDK.md",
     "Task 0.4 — ML Fundamentals & Data Preprocessing Concepts.md",
     "Running commands.md",
     "Install-prereqs output.md",

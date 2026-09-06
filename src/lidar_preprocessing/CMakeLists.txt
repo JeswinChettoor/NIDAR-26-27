@@ -18,6 +18,16 @@ ament_target_dependencies(scan_preprocessor
   rclcpp sensor_msgs geometry_msgs tf2 tf2_geometry_msgs nav_msgs
 )
 
+add_executable(odom_bridge src/odom_bridge.cpp)
+ament_target_dependencies(odom_bridge rclcpp nav_msgs geometry_msgs)
+
 install(TARGETS scan_preprocessor DESTINATION lib/${PROJECT_NAME})
+install(TARGETS odom_bridge DESTINATION lib/${PROJECT_NAME})
+
+# Install launch files
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}/
+)
 
 ament_package()

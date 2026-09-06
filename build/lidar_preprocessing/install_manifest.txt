@@ -1,4 +1,6 @@
 /workspace/install/lidar_preprocessing/lib/lidar_preprocessing/scan_preprocessor
+/workspace/install/lidar_preprocessing/lib/lidar_preprocessing/odom_bridge
+/workspace/install/lidar_preprocessing/share/lidar_preprocessing//launch/drone_localization.launch.py
 /workspace/install/lidar_preprocessing/share/ament_index/resource_index/package_run_dependencies/lidar_preprocessing
 /workspace/install/lidar_preprocessing/share/ament_index/resource_index/parent_prefix_path/lidar_preprocessing
 /workspace/install/lidar_preprocessing/share/lidar_preprocessing/environment/ament_prefix_path.sh

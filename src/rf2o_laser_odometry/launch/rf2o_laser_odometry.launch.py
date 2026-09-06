@@ -21,7 +21,7 @@ def generate_launch_description():
             parameters=[{
                 'laser_scan_topic': '/scan',
                 'odom_topic': '/odom_rf2o',
-                'publish_tf': True,
+                'publish_tf': False,
                 'base_frame_id': 'iris/lidar_link/lidar_2d',
                 'odom_frame_id': 'odom',
                 'init_pose_from_topic': '',

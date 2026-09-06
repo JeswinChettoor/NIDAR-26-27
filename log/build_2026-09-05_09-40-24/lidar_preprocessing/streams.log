@@ -1,0 +1,47 @@
+[0.007s] Invoking command in '/workspace/build/lidar_preprocessing': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspace/build/lidar_preprocessing -- -j16 -l16
+[0.023s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.107s] -- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+[0.123s] -- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.125s] -- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.128s] -- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.134s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.140s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.159s] -- Found rmw_implementation_cmake: 6.1.3 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.159s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.235s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.263s] -- Found sensor_msgs: 4.9.2 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.279s] -- Found tf2: 0.25.22 (/opt/ros/humble/share/tf2/cmake)
+[0.281s] -- Found tf2_geometry_msgs: 0.25.22 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[0.283s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.284s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.329s] -- Found nav_msgs: 4.9.2 (/opt/ros/humble/share/nav_msgs/cmake)
+[0.377s] -- Configuring done
+[0.386s] -- Generating done
+[0.389s] -- Build files have been written to: /workspace/build/lidar_preprocessing
+[0.408s] [35m[1mConsolidate compiler generated dependencies of target odom_bridge[0m
+[0.410s] [35m[1mConsolidate compiler generated dependencies of target scan_preprocessor[0m
+[0.420s] [ 50%] Built target odom_bridge
+[0.422s] [100%] Built target scan_preprocessor
+[0.431s] Invoked command in '/workspace/build/lidar_preprocessing' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspace/build/lidar_preprocessing -- -j16 -l16
+[0.438s] Invoking command in '/workspace/build/lidar_preprocessing': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspace/build/lidar_preprocessing
+[0.443s] -- Install configuration: ""
+[0.443s] -- Up-to-date: /workspace/install/lidar_preprocessing/lib/lidar_preprocessing/scan_preprocessor
+[0.443s] -- Up-to-date: /workspace/install/lidar_preprocessing/lib/lidar_preprocessing/odom_bridge
+[0.443s] -- Installing: /workspace/install/lidar_preprocessing/share/lidar_preprocessing//launch
+[0.443s] -- Installing: /workspace/install/lidar_preprocessing/share/lidar_preprocessing//launch/drone_localization.launch.py
+[0.443s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/ament_index/resource_index/package_run_dependencies/lidar_preprocessing
+[0.443s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/ament_index/resource_index/parent_prefix_path/lidar_preprocessing
+[0.443s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/environment/ament_prefix_path.sh
+[0.443s] -- Installing: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/environment/ament_prefix_path.dsv
+[0.443s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/environment/path.sh
+[0.444s] -- Installing: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/environment/path.dsv
+[0.444s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/local_setup.bash
+[0.444s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/local_setup.sh
+[0.444s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/local_setup.zsh
+[0.444s] -- Installing: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/local_setup.dsv
+[0.444s] -- Installing: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/package.dsv
+[0.444s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/ament_index/resource_index/packages/lidar_preprocessing
+[0.444s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/cmake/lidar_preprocessingConfig.cmake
+[0.444s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/cmake/lidar_preprocessingConfig-version.cmake
+[0.445s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/package.xml
+[0.445s] Invoked command in '/workspace/build/lidar_preprocessing' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspace/build/lidar_preprocessing

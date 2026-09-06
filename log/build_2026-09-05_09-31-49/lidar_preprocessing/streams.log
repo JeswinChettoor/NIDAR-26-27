@@ -1,0 +1,25 @@
+[0.007s] Invoking command in '/workspace/build/lidar_preprocessing': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspace/build/lidar_preprocessing -- -j16 -l16
+[0.038s] [35m[1mConsolidate compiler generated dependencies of target odom_bridge[0m
+[0.051s] [ 50%] Built target scan_preprocessor
+[0.053s] [100%] Built target odom_bridge
+[0.061s] Invoked command in '/workspace/build/lidar_preprocessing' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspace/build/lidar_preprocessing -- -j16 -l16
+[0.068s] Invoking command in '/workspace/build/lidar_preprocessing': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspace/build/lidar_preprocessing
+[0.074s] -- Install configuration: ""
+[0.074s] -- Up-to-date: /workspace/install/lidar_preprocessing/lib/lidar_preprocessing/odom_bridge
+[0.075s] -- Up-to-date: /workspace/install/lidar_preprocessing/lib/lidar_preprocessing/scan_preprocessor
+[0.075s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/ament_index/resource_index/package_run_dependencies/lidar_preprocessing
+[0.075s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/ament_index/resource_index/parent_prefix_path/lidar_preprocessing
+[0.075s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/environment/ament_prefix_path.sh
+[0.075s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/environment/ament_prefix_path.dsv
+[0.075s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/environment/path.sh
+[0.075s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/environment/path.dsv
+[0.075s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/local_setup.bash
+[0.075s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/local_setup.sh
+[0.075s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/local_setup.zsh
+[0.075s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/local_setup.dsv
+[0.075s] -- Installing: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/package.dsv
+[0.075s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/ament_index/resource_index/packages/lidar_preprocessing
+[0.075s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/cmake/lidar_preprocessingConfig.cmake
+[0.075s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/cmake/lidar_preprocessingConfig-version.cmake
+[0.075s] -- Up-to-date: /workspace/install/lidar_preprocessing/share/lidar_preprocessing/package.xml
+[0.076s] Invoked command in '/workspace/build/lidar_preprocessing' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspace/build/lidar_preprocessing

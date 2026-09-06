@@ -210,6 +210,43 @@ scan_preprocessor/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scan_preprocessor.dir/build.make CMakeFiles/scan_preprocessor.dir/build
 .PHONY : scan_preprocessor/fast
 
+#=============================================================================
+# Target rules for targets named odom_bridge
+
+# Build rule for target.
+odom_bridge: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 odom_bridge
+.PHONY : odom_bridge
+
+# fast build rule for target.
+odom_bridge/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/odom_bridge.dir/build.make CMakeFiles/odom_bridge.dir/build
+.PHONY : odom_bridge/fast
+
+src/odom_bridge.o: src/odom_bridge.cpp.o
+.PHONY : src/odom_bridge.o
+
+# target to build an object file
+src/odom_bridge.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/odom_bridge.dir/build.make CMakeFiles/odom_bridge.dir/src/odom_bridge.cpp.o
+.PHONY : src/odom_bridge.cpp.o
+
+src/odom_bridge.i: src/odom_bridge.cpp.i
+.PHONY : src/odom_bridge.i
+
+# target to preprocess a source file
+src/odom_bridge.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/odom_bridge.dir/build.make CMakeFiles/odom_bridge.dir/src/odom_bridge.cpp.i
+.PHONY : src/odom_bridge.cpp.i
+
+src/odom_bridge.s: src/odom_bridge.cpp.s
+.PHONY : src/odom_bridge.s
+
+# target to generate assembly for a file
+src/odom_bridge.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/odom_bridge.dir/build.make CMakeFiles/odom_bridge.dir/src/odom_bridge.cpp.s
+.PHONY : src/odom_bridge.cpp.s
+
 src/scan_preprocessor.o: src/scan_preprocessor.cpp.o
 .PHONY : src/scan_preprocessor.o
 
@@ -249,7 +286,11 @@ help:
 	@echo "... test"
 	@echo "... lidar_preprocessing_uninstall"
 	@echo "... uninstall"
+	@echo "... odom_bridge"
 	@echo "... scan_preprocessor"
+	@echo "... src/odom_bridge.o"
+	@echo "... src/odom_bridge.i"
+	@echo "... src/odom_bridge.s"
 	@echo "... src/scan_preprocessor.o"
 	@echo "... src/scan_preprocessor.i"
 	@echo "... src/scan_preprocessor.s"

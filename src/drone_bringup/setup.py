@@ -22,6 +22,8 @@ setup(
     description='Bringup package for drone simulation and odometry pipeline',
     license='Apache-2.0',
     entry_points={
-        'console_scripts': [],
+        'console_scripts': [
+            'rangefinder_converter = drone_bringup.rangefinder_converter:main',
+        ],
     },
 )

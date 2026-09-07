@@ -23,14 +23,16 @@ public:
         min_range_ = this->get_parameter("min_range_m").as_double();
         max_range_ = this->get_parameter("max_range_m").as_double();
 
-        // Subscribers
-        scan_sub_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
-            "/scan", 10,
-            std::bind(&ScanPreprocessor::scanCallback, this, std::placeholders::_1));
-
+        // Subscribers configured with SensorDataQoS (Best Effort)
         imu_sub_ = this->create_subscription<sensor_msgs::msg::Imu>(
-            "/mavros/imu/data", 10,
+            "/mavros/imu/data",
+            rclcpp::SensorDataQoS(),
             std::bind(&ScanPreprocessor::imuCallback, this, std::placeholders::_1));
+
+        scan_sub_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
+            "/scan",
+            rclcpp::SensorDataQoS(),
+            std::bind(&ScanPreprocessor::scanCallback, this, std::placeholders::_1));
 
         // Publisher
         scan_pub_ = this->create_publisher<sensor_msgs::msg::LaserScan>("/scan_stabilized", 10);

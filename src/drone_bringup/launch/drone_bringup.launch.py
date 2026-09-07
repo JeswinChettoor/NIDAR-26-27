@@ -9,6 +9,8 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time')
     bridge_config = LaunchConfiguration('bridge_config')
+    mavros_config = LaunchConfiguration('mavros_config')
+    pluginlists_yaml = LaunchConfiguration('pluginlists_yaml')
     fcu_url = LaunchConfiguration('fcu_url')
     gcs_url = LaunchConfiguration('gcs_url')
 
@@ -16,6 +18,18 @@ def generate_launch_description():
         FindPackageShare('drone_bringup'),
         'config',
         'bridge.yaml'
+    ])
+
+    default_mavros_config_path = PathJoinSubstitution([
+        FindPackageShare('drone_bringup'),
+        'config',
+        'mavros_config.yaml'
+    ])
+
+    default_pluginlists_path = PathJoinSubstitution([
+        FindPackageShare('drone_bringup'),
+        'config',
+        'apm_pluginlists.yaml'
     ])
 
     declare_use_sim_time = DeclareLaunchArgument(
@@ -28,6 +42,18 @@ def generate_launch_description():
         'bridge_config',
         default_value=default_bridge_config_path,
         description='Path to ros_gz_bridge parameter YAML config'
+    )
+
+    declare_mavros_config = DeclareLaunchArgument(
+        'mavros_config',
+        default_value=default_mavros_config_path,
+        description='Path to custom MAVROS config YAML (enables distance_sensor)'
+    )
+
+    declare_pluginlists = DeclareLaunchArgument(
+        'pluginlists_yaml',
+        default_value=default_pluginlists_path,
+        description='Path to MAVROS plugin allowlist/denylist YAML'
     )
 
     declare_fcu_url = DeclareLaunchArgument(
@@ -54,7 +80,7 @@ def generate_launch_description():
         }],
     )
 
-    # 2. MAVROS
+    # 2. MAVROS (using custom config_yaml and apm_pluginlists)
     mavros_launch = IncludeLaunchDescription(
         AnyLaunchDescriptionSource(
             PathJoinSubstitution([
@@ -67,6 +93,8 @@ def generate_launch_description():
             'fcu_url': fcu_url,
             'gcs_url': gcs_url,
             'use_sim_time': use_sim_time,
+            'config_yaml': mavros_config,
+            'pluginlists_yaml': pluginlists_yaml,
         }.items(),
     )
 
@@ -116,9 +144,23 @@ def generate_launch_description():
         }],
     )
 
+    # 6. Rangefinder Relay (/rangefinder -> /mavros/distance_sensor/rangefinder_sub)
+    rangefinder_relay_node = Node(
+        package='topic_tools',
+        executable='relay',
+        name='rangefinder_relay',
+        output='screen',
+        arguments=['/rangefinder', '/mavros/distance_sensor/rangefinder_sub'],
+        parameters=[{
+            'use_sim_time': use_sim_time,
+        }],
+    )
+
     return LaunchDescription([
         declare_use_sim_time,
         declare_bridge_config,
+        declare_mavros_config,
+        declare_pluginlists,
         declare_fcu_url,
         declare_gcs_url,
         bridge_node,
@@ -126,4 +168,5 @@ def generate_launch_description():
         scan_preprocessor_node,
         rf2o_node,
         odom_bridge_node,
+        rangefinder_relay_node,
     ])

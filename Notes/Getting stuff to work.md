@@ -44,3 +44,8 @@ source /opt/ros/humble/setup.bash && \
 if [ -f /workspace/install/setup.bash ]; then source /workspace/install/setup.bash; fi && \
 ros2 launch drone_bringup.launch.py
 ```
+
+## Latest  
+```
+ros2 launch drone_bringup drone_bringup.launch.py
+```

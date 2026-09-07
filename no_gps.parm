@@ -11,16 +11,26 @@ SIM_GPS1_TYPE 0
 AHRS_EKF_TYPE 3
 EK3_ENABLE 1
 
-# EKF3 Source Set 1 (Merged from Config 1)
-EK3_SRC1_POSXY 0
-EK3_SRC1_VELXY 6
-EK3_SRC1_POSZ 1
-EK3_SRC1_VELZ 1
+# External Navigation / Visual Odometry (MAVLink #331)
+VISO_TYPE 1
+VISO_DELAY_MS 50
+
+# Downward Rangefinder Configuration (MAVLink DISTANCE_SENSOR)
+RNGFND1_TYPE 10
+RNGFND1_MIN_CM 5
+RNGFND1_MAX_CM 2500
+RNGFND1_ORIENT 25
+
+# EKF3 Source Set 1 (Indoor GPS-Denied: LiDAR VelXY + Rangefinder Alt)
+EK3_SRC1_POSZ 2
+EK3_SRC1_VELZ 0
 EK3_SRC1_YAW 1
 EK3_SRC_OPTIONS 0
-
-# Arming & Checks
+EK3_SRC1_POSXY 0
+EK3_SRC1_VELXY 6 
+# Arming & Pre-Arm Check Configuration
 ARMING_NEED_LOC 0
+ARMING_SKIPCHK 65535
 
 # Attitude Rate PID Tuning
 ATC_RAT_RLL_P 0.10

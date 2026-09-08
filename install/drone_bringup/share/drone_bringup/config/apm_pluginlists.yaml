@@ -1,23 +1,17 @@
 /**:
   ros__parameters:
-    plugin_denylist:
-      - safety_area
-      - vibration
-      - wheel_odometry
-
     plugin_allowlist:
-      - sys
-      - time
+      - sys_status
+      - sys_time
       - imu
       - local_position
       - global_position
       - odometry
-      - odom # <--- EXPLICITLY ALLOWED HERE
       - setpoint_position
       - setpoint_velocity
       - distance_sensor
       - param
-      - cmd
-      - rc
+      - command
+      - rc_io
       - manual_control
       - waypoint

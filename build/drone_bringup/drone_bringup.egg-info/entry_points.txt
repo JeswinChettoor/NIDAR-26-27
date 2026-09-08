@@ -1,2 +1,0 @@
-[console_scripts]
-rangefinder_converter = drone_bringup.rangefinder_converter:main

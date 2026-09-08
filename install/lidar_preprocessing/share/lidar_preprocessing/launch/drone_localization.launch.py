@@ -1,1 +1,0 @@
-/workspace/src/lidar_preprocessing/launch/drone_localization.launch.py

@@ -1,7 +1,0 @@
-/**:
-  ros__parameters:
-    distance_sensor:
-      rangefinder_sub:
-        id: 0
-        subscriber: true
-        orientation: PITCH_270

@@ -4,19 +4,12 @@ ENV DEBIAN_FRONTEND=noninteractive \
     LANG=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8
 
-# ==============================================================================
-# 1. Base Tools, Sudo, Locales & Build Essentials
-# ==============================================================================
 RUN apt-get update && apt-get install -y --no-install-recommends \
         locales curl wget gnupg lsb-release ca-certificates \
         software-properties-common git sudo python3-pip python3-dev \
         cmake build-essential ccache gawk pkg-config \
     && locale-gen en_US.UTF-8 \
     && rm -rf /var/lib/apt/lists/*
-
-# ==============================================================================
-# 2. Gazebo Harmonic Official Apt Repository & Libraries
-# ==============================================================================
 RUN wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg \
     && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" \
         | tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null \
@@ -25,10 +18,6 @@ RUN wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pk
         libgz-sim8-dev \
         libgz-transport13-dev \
     && rm -rf /var/lib/apt/lists/*
-
-# ==============================================================================
-# 3. GPU / GUI Runtime Libraries & DRI Symlinks (X11 / Wayland Support)
-# ==============================================================================
 RUN apt-get update && apt-get install -y --no-install-recommends \
         libgl1-mesa-glx libgl1-mesa-dri libegl1 libegl-mesa0 libglu1-mesa libosmesa6 \
         mesa-utils x11-utils x11-apps \
@@ -37,9 +26,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && ln -sf /usr/lib/x86_64-linux-gnu/dri/* /usr/lib/dri/ \
     && rm -rf /var/lib/apt/lists/*
 
-# ==============================================================================
-# 4. ROS 2 Humble Repository & Desktop Installation
-# ==============================================================================
 RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg \
     && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu jammy main" \
         | tee /etc/apt/sources.list.d/ros2.list > /dev/null \
@@ -51,18 +37,13 @@ RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o 
     && rosdep update \
     && rm -rf /var/lib/apt/lists/*
 
-# ==============================================================================
-# 5. Gazebo Harmonic <-> ROS 2 Bridge (ros_gz)
-# ==============================================================================
 RUN apt-get update && apt-get install -y --no-install-recommends \
         ros-humble-ros-gzharmonic \
         ros-humble-ros-gzharmonic-bridge \
         ros-humble-ros-gzharmonic-interfaces \
         ros-humble-ros-gzharmonic-sim \
     && rm -rf /var/lib/apt/lists/*
-# ==============================================================================
-# 6. MAVROS, GeographicLib & SITL Python Dependencies
-# ==============================================================================
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
         ros-humble-mavros \
         ros-humble-mavros-msgs \
@@ -88,9 +69,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         wxPython \
     && rm -rf /var/lib/apt/lists/*
 
-# ==============================================================================
-# 7. GPS-Denied Navigation Stack (SLAM Toolbox, Nav2, RF2O, TF2)
-# ==============================================================================
 RUN apt-get update && apt-get install -y --no-install-recommends \
         ros-humble-slam-toolbox \
         ros-humble-navigation2 \
@@ -98,10 +76,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         ros-humble-tf-transformations \
         ros-humble-tf2-ros \
     && rm -rf /var/lib/apt/lists/*
-    
-# ==============================================================================
-# 8. User Creation & Sudo Permissions
-# ==============================================================================
 ARG USERNAME=developer
 ARG USER_UID=1000
 ARG USER_GID=1000
@@ -114,9 +88,7 @@ RUN (groupadd --gid $USER_GID $USERNAME 2>/dev/null || true) && \
     echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
     echo "$USERNAME:$USERNAME" | chpasswd
 
-# ==============================================================================
-# 9. Workspace Setup & Environment Variables
-# ==============================================================================
+
 WORKDIR /workspace
 ENV USER=$USERNAME
 ENV GZ_VERSION=harmonic
@@ -136,12 +108,6 @@ RUN chown -R $USERNAME:$USERNAME /home/$USERNAME /workspace
 # Switch to developer user
 USER $USERNAME
 
-# ==============================================================================
-# 10. Persistent Shell Sourcing (.bashrc)
-# ==============================================================================
-# ==============================================================================
-# 10. Persistent Shell Sourcing (.bashrc)
-# ==============================================================================
 RUN echo "source /opt/ros/humble/setup.bash" >> /home/$USERNAME/.bashrc && \
     echo "if [ -f /workspace/install/setup.bash ]; then source /workspace/install/setup.bash; fi" >> /home/$USERNAME/.bashrc && \
     echo "export PATH=/home/$USERNAME/.local/bin:/workspace/ardupilot/Tools/autotest:\$PATH" >> /home/$USERNAME/.bashrc && \

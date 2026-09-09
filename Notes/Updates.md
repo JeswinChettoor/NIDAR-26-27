@@ -12,6 +12,17 @@
 #### Done
 - Removed everything back to only have ros gazebo bridge. 
 - Removed some params which were not needed.
-- Talked to anant  about the guided mode .
+- Talked to anant  about  guided mode .
 - Fixed params to use barometer for height instead of rangefinder , in irl , it would be just one param change. Ardupilot also handles tilt compensation for rangefinder.
+- Read slam toolbox documentation
+- Set up mavros again
+- Looked into how laser odometry is not needed , but just tune slam pose properly.
+### September 9
+## Things to do
+- Set up transforms.
+- Get slam toolbox running
+- Changed design of the localization .
+- Now rf20  is only giving odom->base_link.
+- No fusing ekf on companion
+- Figured out better ways for tilt  compensation using pointclouds  and ros
 - 

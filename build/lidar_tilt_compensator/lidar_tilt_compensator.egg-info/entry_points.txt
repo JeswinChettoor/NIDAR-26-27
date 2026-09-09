@@ -1,0 +1,2 @@
+[console_scripts]
+scan_to_cloud_node = lidar_tilt_compensator.scan_to_cloud_node:main

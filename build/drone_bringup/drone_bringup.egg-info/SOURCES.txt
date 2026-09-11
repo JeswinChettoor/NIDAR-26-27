@@ -8,8 +8,10 @@ setup.py
 ../../build/drone_bringup/drone_bringup.egg-info/top_level.txt
 ../../build/drone_bringup/drone_bringup.egg-info/zip-safe
 config/bridge.yaml
+config/slam_toolbox.yaml
 drone_bringup/__init__.py
 launch/drone_bringup.launch.py
+launch/slam_standalone.launch.py
 resource/drone_bringup
 test/test_copyright.py
 test/test_flake8.py

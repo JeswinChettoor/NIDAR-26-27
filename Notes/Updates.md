@@ -25,4 +25,12 @@
 - Now rf20  is only giving odom->base_link.
 - No fusing ekf on companion
 - Figured out better ways for tilt  compensation using pointclouds  and ros
+### Things done
+- Scan_stabilized running
+- got transforms runnning 
+- Launch files
+## September 10
+- Verified scan_stabilized s accuracy
+- Got slam toolbox running
+- Was facing message dropping issues due to both sim time not being followed everywhere. also  update rate is very low , around 3hz. Had to lower scan to match the rf20 speed.
 - 

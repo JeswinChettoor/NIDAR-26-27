@@ -49,3 +49,14 @@ ros2 launch drone_bringup.launch.py
 ```
 ros2 launch drone_bringup drone_bringup.launch.py
 ```
+ros2 run rviz2 rviz2 --ros-args -p use_sim_time:=true
+also change base to base_footprint
+
+ ros2 launch lidar_tilt_compensator lidar_stabilization.launch.py
+
+```bash
+ros2 launch rf2o_laser_odometry rf2o_laser_odometry.launch.py
+```
+
+
+Setting 

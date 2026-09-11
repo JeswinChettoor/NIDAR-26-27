@@ -44,6 +44,6 @@ cd /workspace/SIM/Worlds && gz sim -v4 -r combined_arena.sdf
 In another docker terminal
 ```
 cd /workspace/ardupilot/ArduCopter
-sim_vehicle.py -v ArduCopter -f gazebo-iris --model JSON -w --add-param-file=/workspace/no_gps.parm --console
+	`sim_vehicle.py -v ArduCopter -f gazebo-iris --model JSON -w --add-param-file=/workspace/no_gps.parm --console`
 ```
 

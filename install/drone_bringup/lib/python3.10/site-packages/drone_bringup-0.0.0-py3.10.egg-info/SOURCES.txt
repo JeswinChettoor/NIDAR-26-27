@@ -11,8 +11,10 @@ setup.py
 config/bridge.yaml
 config/slam_toolbox.yaml
 drone_bringup/__init__.py
+drone_bringup/rangefinder_to_mavros.py
 drone_bringup/rf2o_mavros.py
 launch/drone_bringup.launch.py
+launch/drone_bringup_launch.py
 launch/slam_standalone.launch.py
 resource/drone_bringup
 test/test_copyright.py

@@ -38,10 +38,10 @@ class Rf2oToMavrosBridge(Node):
             self.get_parameter('twist_covariance_diag').value, 'twist_covariance_diag'
         )
 
-        # rf2o/mavros commonly run best-effort; match that so QoS mismatches
-        # don't silently drop messages.
+        # mavros's odometry subscriber requests RELIABLE — match it, or
+        # messages get silently dropped (no error, just no delivery).
         qos = QoSProfile(
-            reliability=ReliabilityPolicy.BEST_EFFORT,
+            reliability=ReliabilityPolicy.RELIABLE,
             history=HistoryPolicy.KEEP_LAST,
             depth=10,
         )

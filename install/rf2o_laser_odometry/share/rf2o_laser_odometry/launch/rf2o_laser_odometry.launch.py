@@ -23,12 +23,12 @@ def generate_launch_description():
                 output='screen',
                 parameters=[{
                     'laser_scan_topic' : '/scan_stabilized',
-                    'odom_topic' : '/odom',
-                    'publish_tf' : True,
+                    'odom_topic' : '/rf2o_odom',
+                    'publish_tf' : False,
                     'base_frame_id' : 'base_footprint',
                     'odom_frame_id' : 'odom',
                     'init_pose_from_topic' : '',
-                    'freq' : 10.0,
+                    'freq' : 20.0,
                     'use_sim_time' : True}],
             ),
     ])

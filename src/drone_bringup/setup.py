@@ -22,6 +22,9 @@ setup(
     description='Bringup package for drone simulation and odometry pipeline',
     license='Apache-2.0',
     entry_points={
-        'console_scripts': [],
+        'console_scripts': [
+            'rf2o_mavros = drone_bringup.rf2o_mavros:main',
+            'rangefinder_to_mavros = drone_bringup.rangefinder_to_mavros:main',
+        ],
     },
 )

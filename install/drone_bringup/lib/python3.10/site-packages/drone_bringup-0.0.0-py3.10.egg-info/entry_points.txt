@@ -1,0 +1,2 @@
+[console_scripts]
+rf2o_mavros = drone_bringup.rf2o_mavros:main
